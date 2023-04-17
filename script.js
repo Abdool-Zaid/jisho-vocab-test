@@ -2,13 +2,11 @@ let app = document.querySelector("#app")
 let i
 let data= localStorage.data?localStorage.data:[]
 let levelSelector=document.createElement("select")
-import jishoApi from '../node_modules/npunofficial-jisho-api';
-let jisho 
-function init(){
+import jishoApi from './node_modules/unofficial-jisho-api';
+// let jisho 
 
-    jisho= new JishoAPI();
+//     jisho= new jishoApi();
 
-} 
 
 // jisho.searchForPhrase('日').then(result => {
 //   console.log(result);
@@ -17,6 +15,9 @@ function init(){
 
 levelSelector.id="levelSelector"
 // children
+i= document.createElement('option')
+i.label="choose a level"
+levelSelector.options.add(i)
 for(i=5;i>0;i--){
     let opt= document.createElement("option")
     opt.value=`n${i}`
@@ -28,6 +29,5 @@ app.append(levelSelector)
 levelSelector= document.querySelector("#levelSelector")
 levelSelector.addEventListener("change",()=>{
     let level = levelSelector.value
-
 
 })
